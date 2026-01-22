@@ -14,7 +14,8 @@ function solution(dirs) {
         // 좌표평면의 경계를 넘어가는 명령어는 무시
         if (x + dx > 5 || x + dx < -5 || y + dy > 5 || y + dy < -5) return;
 
-        visited.add(`${x},${y},${x + dx},${y + dy}`);
+        const road = [`${x},${y}`, `${x + dx},${y + dy}`].sort().join('-')
+        visited.add(road);
 
         x += dx;
         y += dy;
